@@ -18,3 +18,5 @@
 # export RPROMPT=$'%{\e[0;36m%}[%{\e[1;37m%}%t%{\e[0;36m%}]%{\e[0m%}'
 
 set promptchars='$#' # 1st char is for user, 2nd is for uid 0
+
+alias ls='ls --color=auto'
