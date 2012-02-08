@@ -1,0 +1,19 @@
+URxvt.font:			xft:terminus:size=8
+URxvt.pastableTabs:		false
+
+XTerm*faceName:			xft:terminus:size=12
+
+! scrollbar style - rxvt (default), plain, next, or xterm
+URxvt.scrollstyle:		rxvt
+! cant get into the left hand scrollbar
+URxvt.scrollBar_right:		true
+! delineates the scrollbar nicely
+URxvt.scrollBar_floating:	false
+URxvt.shading:			0
+
+! fc-list will provide a list
+emacs.FontBackend:		xft
+emacs.font:			Terminus-8
+
+! kill that sodding ISO 14755 Mode when you hit Ctrl-Shift 
+URxvt.iso14755:                 false
