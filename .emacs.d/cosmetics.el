@@ -1,0 +1,5 @@
+(set-default 'indicate-empty-lines t)
+(tool-bar-mode nil)
+(set-scroll-bar-mode 'right)
+(show-paren-mode 1)
+(column-number-mode 1)
