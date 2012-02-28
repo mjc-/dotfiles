@@ -1,20 +1,11 @@
-;; add marmalade repo
-(require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . 
-               "http://marmalade-repo.org/packages/") t)
-(package-initialize)
+(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 
-;; pull in packages
-(when (not package-archive-contents)
-  (package-refresh-contents))
+(load "proxy-config")
 
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-eshell
-                      starter-kit-ruby starter-kit-bindings
-                      color-theme color-theme-twilight scpaste
-		      clojure-mode clojure-test-mode
-		      markdown-mode yaml-mode))
+(load "marmalade")
+(load "tromey")
+(load "my-packages")
 
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+(load "backup-config")
+(load "cosmetics")
+(load "tmux")

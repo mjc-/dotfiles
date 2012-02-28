@@ -1,0 +1,41 @@
+#!/bin/sh
+
+theme=zenburn
+
+_puts()
+{
+    printf "[*] %s\n" "$@"
+}
+
+_dircolors()
+{
+    if [ -f ~/.dircolors ]; then
+        _puts "dircolors already installed"
+        return
+    fi
+    _puts "installing dircolors"
+    cp dircolors.zenburn ~/.dircolors.zenburn
+    cp dircolors.solarized ~/.dircolors.solarized
+    ln -s ~/.dircolors.$1 ~/.dircolors
+}
+
+_emacs()
+{
+    if [ -f ~/.emacs.d/init.el ]; then
+        _puts "emacs config already installed"
+        return
+    fi
+    if [! -d ~/.emacs.d ]; then
+        mkdir ~/.emacs.d
+    fi
+    _puts "installing emacs config"
+    cp -r .emacs.d/*.el ~/.emacs.d/
+    
+}
+
+_dircolors $theme
+_emacs
+
+# Xresources should check distro to pick either xdefaults or
+# xresources ?
+#_xresources $theme
