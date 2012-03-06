@@ -30,12 +30,21 @@ _emacs()
     fi
     _puts "installing emacs config"
     cp -r .emacs.d/*.el ~/.emacs.d/
-    
+}
+
+_tmux()
+{
+    if [ -f ~/.tmux.conf ]; then
+        _puts "tmux.conf already installed"
+        return
+    fi
+    _puts "installing tmux.conf"
+    cp .tmux.conf ~/
 }
 
 _dircolors $theme
 _emacs
-
+_tmux
 # Xresources should check distro to pick either xdefaults or
 # xresources ?
 #_xresources $theme
