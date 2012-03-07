@@ -25,7 +25,7 @@ _emacs()
         _puts "emacs config already installed"
         return
     fi
-    if [! -d ~/.emacs.d ]; then
+    if [ ! -d ~/.emacs.d ]; then
         mkdir ~/.emacs.d
     fi
     _puts "installing emacs config"
